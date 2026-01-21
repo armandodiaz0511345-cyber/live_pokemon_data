@@ -1,0 +1,8 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "[Your Blob Storage Access Key Connection String]",
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+    "SqlConnectionString": "Driver={ODBC Driver 18 for SQL Server};Server=tcp:[Your SQL Server Name (check Azure)];Database=[Your Database Name];Uid=[Your User ID];Pwd=[Your User Password];Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
+  }
+}
