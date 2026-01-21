@@ -2,7 +2,7 @@
 
 A robust end-to-end data engineering project designed to ingest, store, and transform live Pokémon data.
 
-**Project Status:** ✅ Complete  
+**Project Status:** ✅ Complete  (may add more stuff later, depending...)
 **Primary Focus:** Advanced SQL Server Development & Azure Cloud Integration
 
 ## 📖 About The Project
