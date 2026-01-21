@@ -15,11 +15,11 @@ While many data projects rely heavily on Python for transformation, I intentiona
 
 The pipeline follows a standard extract-load-transform (ELT) pattern:
 
-1.  **Ingestion:** An Azure Function (Python) triggers the extraction of live data from the Pokémon API.
-2.  **Data Lake:** Raw JSON files are stored immediately in **Azure Blob Storage**.
-3.  **Database Connection:** My Azure SQL Database connects directly to Blob Storage to read the raw files.
+1.  **Ingestion:** An Azure Function (Python) triggers the extraction of live data from the Pokémon API (daily at 2AM).
+2.  **Data Lake:** Raw JSON files are stored immediately in **Azure Blob Storage** (JSON).
+3.  **Database Connection:** My Azure SQL Database connects directly to Blob Storage to read the raw files (python calls SQL Server immediately after all cards are complete).
 4.  **Transformation (The Core):**
-    * **Bronze Layer:** Dynamic loading of raw JSON.
+    * **Bronze Layer:** Dynamic loading of raw JSON (use sp_executesql and REPLACE w/ GETDATE in order to get data from today's json (which was just uploaded to blob).
     * **Silver/Gold Layers:** Parsing JSON into relational tables, applying surrogate keys, and enforcing data types.
 
 Here is the Data Architecture plan i started with:
