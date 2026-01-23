@@ -5,7 +5,7 @@ import json
 import time
 import pyodbc
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 from azure.storage.blob import BlobServiceClient, ContentSettings
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
@@ -103,7 +103,7 @@ def fetch_all_cards():
 
     # MAIN EXTRACTION LOOP
     try:
-        today_str = datetime.now().strftime("%Y%m%d")
+        today_str = (datetime.now()- timdedelta(hours = 5)).strftime("%Y%m%d")
         filename = f"pokemon_data_{today_str}.json"
 
         all_cards = load_existing_progress(filename)
@@ -185,4 +185,5 @@ def run_sql_load():
                 logging.info("SQL Load Successful and Committed.")
                 
     except Exception as e:
+
         logging.error(f"SQL Load failed: {e}")
