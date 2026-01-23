@@ -1,0 +1,1 @@
+Note - Azure time zone and TCG API Timezone are different (Azure works off UTC (locked for linux), TCG API works off EST (i believe)) - so i implemented DATEADDs and timedelta functions in order to keep as much of the times presented in line (python script date = blob storage date = sql load metadata date)
